@@ -25,6 +25,7 @@ public class DirectoryList {
             System.out.println("[4] Ejercicio 4: Obtener el directorio padre");
             System.out.println("[5] Ejercicio 5: Listar el contenido de un directorio");
             System.out.println("[6] Ejercicio 6: Crear archivos");
+            System.out.println("[7] Ejercicio 7: Borrar y renombrar");
             System.out.println("[default] Salir ");
             opcion = sc.nextInt();
             switch(opcion){
@@ -48,6 +49,9 @@ public class DirectoryList {
                     break;
                 case 6:
                     ej6(arrayPathsVariados[2]);
+                    break;
+                case 7:
+                    ej7(arrayPathsVariados[2]+"/creacion.txt");
                     break;
                 default:
                     opcion=33;
@@ -172,6 +176,17 @@ public class DirectoryList {
             e.printStackTrace();
         }
     }
+
+    public static void ej7(String path){
+        File file = new File(path);
+        file.renameTo(new File(path));
+        if(file.exists()) {
+            file.delete();
+        }
+    }
+
+    //9  file.toPath
+
 
 
 }
